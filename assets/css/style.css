@@ -9,3 +9,74 @@
 a {
     text-decoration: none;
 }
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #141414;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    background: #141414;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul li a {
+    position: relative;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 40px;
+    font-size: 20px;
+    line-height: 100px;
+    height: 100px;
+    display: block;
+    z-index: 1;
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(236, 93, 93);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(247, 27, 27);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+ul li a:hover::before {
+    height: 100%;
+}
+
+ul li a:hover::after {
+    transition-delay: 0.3s;
+    height: 100%;
+}
